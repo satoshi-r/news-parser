@@ -1,2 +1,2 @@
-# collect-media
-Агрегатор новостей express + vue
+# news-parser
+Парсер новостей с популярных источников 
