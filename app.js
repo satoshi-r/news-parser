@@ -1,12 +1,13 @@
 const express = require('express');
+const cors = require('cors'); 
 const path = require('path');
 const config = require('./config');
 const parsePosts = require('./parser/parsePosts');
 
-const port = process.env.PORT || 3030;
+const port = process.env.PORT || 3000;
 const app = express();
 
-app.get('/api/posts', async (req, res) => {
+app.get('/api/posts', cors(), async (req, res) => {
     const posts = [];
     for (const key in config) {
         const data = await parsePosts(config[key].url, config[key]);
