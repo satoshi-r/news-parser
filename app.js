@@ -6,15 +6,8 @@ const parsePosts = require('./parser/parsePosts');
 const port = process.env.PORT || 3000;
 const app = express();
 
-const whitelist = ['https://collect-media.netlify.app/'];
 const corsOptions = {
-    origin: function (origin, callback) {
-        if (whitelist.indexOf(origin) !== -1) {
-            callback(null, true)
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-    }
+    origin: 'https://collect-media.netlify.app/'
 }
 
 app.get('/api/posts', cors(corsOptions), async (req, res) => {
