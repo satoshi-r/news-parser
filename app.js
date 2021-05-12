@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 const corsOptions = {
-    origin: 'https://collect-media.netlify.app/'
+    origin: 'https://collect-media.netlify.app'
 }
 
 app.get('/api/posts', cors(corsOptions), async (req, res) => {
